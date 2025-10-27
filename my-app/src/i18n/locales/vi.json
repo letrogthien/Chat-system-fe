@@ -1,0 +1,284 @@
+{
+  "common": {
+    "welcome": "Chào mừng đến với Chat",
+    "selectConversation": "Chọn một cuộc trò chuyện để bắt đầu nhắn tin",
+    "search": "Tìm kiếm",
+    "searchPlaceholder": "Tìm kiếm cuộc trò chuyện...",
+    "send": "Gửi",
+    "cancel": "Hủy",
+    "attach": "Đính kèm",
+    "emoji": "Biểu tượng cảm xúc",
+    "call": "Gọi điện",
+    "details": "Chi tiết",
+    "online": "Trực tuyến",
+    "offline": "Ngoại tuyến",
+    "active": "Đang hoạt động",
+    "away": "Vắng mặt",
+    "typing": "đang nhập...",
+    "messages": "Tin nhắn"
+  },
+  "header": {
+    "home": "Trang chủ",
+    "features": "Tính năng",
+    "about": "Về chúng tôi",
+    "contact": "Liên hệ",
+    "login": "Đăng nhập",
+    "register": "Đăng ký"
+  },
+  "footer": {
+    "tagline": "Kết nối mọi người, mọi lúc, mọi nơi với trải nghiệm chat tốt nhất.",
+    "product": "Sản phẩm",
+    "features": "Tính năng",
+    "pricing": "Bảng giá",
+    "download": "Tải xuống",
+    "api": "API",
+    "company": "Công ty",
+    "about": "Về chúng tôi",
+    "blog": "Blog",
+    "careers": "Tuyển dụng",
+    "contact": "Liên hệ",
+    "legal": "Pháp lý",
+    "privacy": "Chính sách bảo mật",
+    "terms": "Điều khoản dịch vụ",
+    "cookies": "Chính sách Cookie",
+    "security": "Bảo mật",
+    "copyright": "Tất cả quyền được bảo lưu."
+  },
+  "chat": {
+    "messagePlaceholder": "Nhắn tin cho {{name}}...",
+    "noUnread": "Không có tin nhắn chưa đọc",
+    "filters": {
+      "all": "Tất cả",
+      "unread": "Chưa đọc",
+      "groups": "Nhóm"
+    },
+    "contextMenu": {
+      "pin": "Ghim",
+      "unpin": "Bỏ ghim",
+      "mute": "Tắt thông báo",
+      "unmute": "Bật thông báo",
+      "markAsRead": "Đánh dấu đã đọc",
+      "markAsUnread": "Đánh dấu chưa đọc",
+      "archive": "Lưu trữ",
+      "delete": "Xóa cuộc trò chuyện",
+      "confirmDelete": "Xóa cuộc trò chuyện này? Hành động này không thể hoàn tác."
+    },
+    "attachments": {
+      "document": "Tài liệu",
+      "documentDesc": "PDF, DOC, TXT",
+      "photo": "Ảnh & Video",
+      "photoDesc": "JPG, PNG, MP4",
+      "camera": "Máy ảnh",
+      "cameraDesc": "Chụp ảnh",
+      "location": "Vị trí",
+      "locationDesc": "Chia sẻ vị trí"
+    },
+    "camera": {
+      "title": "Chụp ảnh",
+      "capture": "Chụp ảnh",
+      "cancel": "Hủy"
+    },
+    "preview": {
+      "title": "Xem trước file",
+      "size": "Kích thước"
+    },
+    "location": {
+      "getting": "📍 Đang lấy vị trí...",
+      "myLocation": "📍 Vị trí của tôi",
+      "error": "❌ Không thể lấy vị trí. Vui lòng cho phép quyền truy cập vị trí."
+    },
+    "actions": {
+      "edit": "Sửa",
+      "delete": "Xóa",
+      "recall": "Thu hồi",
+      "copy": "Sao chép",
+      "forward": "Chuyển tiếp",
+      "reply": "Trả lời",
+      "confirmDelete": "Bạn có chắc chắn muốn xóa tin nhắn này?",
+      "confirmRecall": "Thu hồi tin nhắn này với mọi người?",
+      "recalled": "Tin nhắn đã được thu hồi",
+      "copied": "Đã sao chép vào clipboard!",
+      "edited": "(đã chỉnh sửa)"
+    }
+  },
+  "channels": {
+    "title": "Kênh",
+    "createChannel": "Tạo kênh mới",
+    "searchPlaceholder": "Tìm kênh...",
+    "all": "Tất cả",
+    "joined": "Đã tham gia",
+    "noChannels": "Không tìm thấy kênh",
+    "general": "Thông báo chung",
+    "generalDesc": "Thông báo và tin tức quan trọng",
+    "development": "Phát triển sản phẩm",
+    "developmentDesc": "Thảo luận về tính năng mới",
+    "marketing": "Marketing",
+    "marketingDesc": "Chiến dịch và nội dung marketing",
+    "design": "Thiết kế UI/UX",
+    "designDesc": "Chia sẻ và feedback thiết kế",
+    "random": "Random",
+    "randomDesc": "Trò chuyện thoải mái"
+  },
+  "contacts": {
+    "title": "Liên hệ",
+    "online": "Trực tuyến",
+    "offline": "Ngoại tuyến",
+    "searchPlaceholder": "Tìm kiếm liên hệ...",
+    "viewProfile": "Xem hồ sơ",
+    "sendMessage": "Gửi tin nhắn",
+    "videoCall": "Gọi video"
+  },
+  "settings": {
+    "title": "Cài đặt",
+    "profile": "Hồ sơ",
+    "editProfile": "Chỉnh sửa hồ sơ",
+    "notifications": "Thông báo",
+    "pushNotifications": "Thông báo đẩy",
+    "emailNotifications": "Thông báo email",
+    "soundNotifications": "Thông báo âm thanh",
+    "appearance": "Giao diện",
+    "darkMode": "Chế độ tối",
+    "language": "Ngôn ngữ",
+    "privacy": "Quyền riêng tư & Bảo mật",
+    "twoFactorAuth": "Xác thực hai yếu tố",
+    "blockList": "Danh sách chặn",
+    "about": "Giới thiệu",
+    "version": "Phiên bản",
+    "termsOfService": "Điều khoản dịch vụ",
+    "privacyPolicy": "Chính sách bảo mật",
+    "logout": "Đăng xuất"
+  },
+  "chatInfo": {
+    "about": "Giới thiệu",
+    "email": "Email",
+    "phone": "Điện thoại",
+    "status": "Trạng thái",
+    "media": "Phương tiện",
+    "files": "Tệp tin",
+    "viewAll": "Xem tất cả",
+    "actions": "Hành động",
+    "mute": "Tắt tiếng",
+    "search": "Tìm kiếm",
+    "report": "Báo cáo",
+    "block": "Chặn"
+  },
+  "home": {
+    "title": "Kết nối & Trò chuyện",
+    "subtitle": "Mọi nơi, Mọi lúc",
+    "description": "Trải nghiệm nhắn tin thời gian thực với giao diện đẹp, nhanh chóng và bảo mật. Kết nối với bạn bè, gia đình và đồng nghiệp một cách dễ dàng.",
+    "getStarted": "Bắt đầu Chat",
+    "learnMore": "Tìm hiểu thêm",
+    "stats": {
+      "users": "Người dùng",
+      "messages": "Tin nhắn/ngày",
+      "channels": "Kênh"
+    },
+    "features": {
+      "title": "Tính năng nổi bật",
+      "subtitle": "Những tính năng mạnh mẽ giúp trải nghiệm chat của bạn tốt hơn",
+      "realtime": {
+        "title": "Nhanh như chớp",
+        "description": "Tin nhắn được gửi và nhận tức thời với công nghệ WebSocket hiện đại"
+      },
+      "channels": {
+        "title": "Chat nhóm",
+        "description": "Tạo nhóm chat với bạn bè, gia đình hoặc đội nhóm công việc"
+      },
+      "files": {
+        "title": "Chia sẻ file",
+        "description": "Gửi ảnh, video, tài liệu với dung lượng lớn không giới hạn"
+      },
+      "video": {
+        "title": "Cuộc gọi Voice/Video",
+        "description": "Gọi điện thoại và video call chất lượng cao, ổn định"
+      },
+      "search": {
+        "title": "Đa nền tảng",
+        "description": "Sử dụng trên web, mobile, desktop - đồng bộ mọi thiết bị"
+      },
+      "security": {
+        "title": "Bảo mật End-to-End",
+        "description": "Tin nhắn được mã hóa đầu cuối, chỉ bạn và người nhận có thể đọc"
+      }
+    },
+    "cta": {
+      "title": "Sẵn sàng bắt đầu chat?",
+      "description": "Tham gia hàng triệu người dùng đang trò chuyện trên nền tảng của chúng tôi",
+      "button": "Đăng ký miễn phí"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Đăng nhập",
+      "subtitle": "Chào mừng bạn quay trở lại!",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "password": "Mật khẩu",
+      "passwordPlaceholder": "••••••••",
+      "rememberMe": "Ghi nhớ đăng nhập",
+      "forgotPassword": "Quên mật khẩu?",
+      "loginButton": "Đăng nhập",
+      "loggingIn": "Đang đăng nhập...",
+      "or": "Hoặc",
+      "loginWith": "Hoặc đăng nhập với",
+      "noAccount": "Chưa có tài khoản?",
+      "signUpNow": "Đăng ký ngay",
+      "termsAgreement": "Bằng việc đăng nhập, bạn đồng ý với",
+      "termsOfService": "Điều khoản dịch vụ",
+      "and": "và",
+      "privacyPolicy": "Chính sách bảo mật",
+      "errors": {
+        "emailRequired": "Email là bắt buộc",
+        "emailInvalid": "Email không hợp lệ",
+        "passwordRequired": "Mật khẩu là bắt buộc",
+        "passwordMinLength": "Mật khẩu phải có ít nhất 6 ký tự",
+        "invalidCredentials": "Email hoặc mật khẩu không đúng"
+      }
+    },
+    "register": {
+      "title": "Đăng ký",
+      "subtitle": "Tạo tài khoản mới để bắt đầu",
+      "fullName": "Họ và tên",
+      "fullNamePlaceholder": "Nguyễn Văn A",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "password": "Mật khẩu",
+      "passwordPlaceholder": "••••••••",
+      "confirmPassword": "Xác nhận mật khẩu",
+      "passwordStrength": "Độ mạnh mật khẩu:",
+      "weak": "Yếu",
+      "medium": "Trung bình",
+      "strong": "Mạnh",
+      "agreeToTerms": "Tôi đồng ý với",
+      "termsOfService": "Điều khoản dịch vụ",
+      "and": "và",
+      "privacyPolicy": "Chính sách bảo mật",
+      "registerButton": "Đăng ký",
+      "registering": "Đang đăng ký...",
+      "or": "Hoặc",
+      "registerWith": "Hoặc đăng ký với",
+      "haveAccount": "Đã có tài khoản?",
+      "signIn": "Đăng nhập",
+      "dataProtection": "Thông tin của bạn được bảo mật và mã hóa",
+      "errors": {
+        "fullNameRequired": "Họ và tên là bắt buộc",
+        "fullNameMinLength": "Họ và tên phải có ít nhất 2 ký tự",
+        "emailRequired": "Email là bắt buộc",
+        "emailInvalid": "Email không hợp lệ",
+        "passwordRequired": "Mật khẩu là bắt buộc",
+        "passwordMinLength": "Mật khẩu phải có ít nhất 8 ký tự",
+        "passwordComplexity": "Mật khẩu phải chứa chữ hoa, chữ thường và số",
+        "confirmPasswordRequired": "Vui lòng xác nhận mật khẩu",
+        "passwordMismatch": "Mật khẩu xác nhận không khớp",
+        "emailTaken": "Email đã được sử dụng",
+        "agreeToTermsRequired": "Bạn phải đồng ý với điều khoản sử dụng"
+      }
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "subtitle": "Không tìm thấy trang",
+    "description": "Trang bạn đang tìm kiếm không tồn tại.",
+    "goHome": "Về trang chủ"
+  }
+}

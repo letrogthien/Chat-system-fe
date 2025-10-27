@@ -1,0 +1,284 @@
+{
+  "common": {
+    "welcome": "Welcome to Chat",
+    "selectConversation": "Select a conversation to start messaging",
+    "search": "Search",
+    "searchPlaceholder": "Search conversations...",
+    "send": "Send",
+    "cancel": "Cancel",
+    "attach": "Attach",
+    "emoji": "Emoji",
+    "call": "Call",
+    "details": "Details",
+    "online": "Online",
+    "offline": "Offline",
+    "active": "Active",
+    "away": "Away",
+    "typing": "is typing...",
+    "messages": "Messages"
+  },
+  "header": {
+    "home": "Home",
+    "features": "Features",
+    "about": "About Us",
+    "contact": "Contact",
+    "login": "Login",
+    "register": "Register"
+  },
+  "footer": {
+    "tagline": "Connecting people, anytime, anywhere with the best chat experience.",
+    "product": "Product",
+    "features": "Features",
+    "pricing": "Pricing",
+    "download": "Download",
+    "api": "API",
+    "company": "Company",
+    "about": "About Us",
+    "blog": "Blog",
+    "careers": "Careers",
+    "contact": "Contact",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cookies": "Cookie Policy",
+    "security": "Security",
+    "copyright": "All rights reserved."
+  },
+  "chat": {
+    "messagePlaceholder": "Message {{name}}...",
+    "noUnread": "No unread messages",
+    "filters": {
+      "all": "All",
+      "unread": "Unread",
+      "groups": "Groups"
+    },
+    "contextMenu": {
+      "pin": "Pin",
+      "unpin": "Unpin",
+      "mute": "Mute notifications",
+      "unmute": "Unmute",
+      "markAsRead": "Mark as read",
+      "markAsUnread": "Mark as unread",
+      "archive": "Archive",
+      "delete": "Delete conversation",
+      "confirmDelete": "Delete this conversation? This cannot be undone."
+    },
+    "attachments": {
+      "document": "Document",
+      "documentDesc": "PDF, DOC, TXT",
+      "photo": "Photo & Video",
+      "photoDesc": "JPG, PNG, MP4",
+      "camera": "Camera",
+      "cameraDesc": "Take photo",
+      "location": "Location",
+      "locationDesc": "Share location"
+    },
+    "camera": {
+      "title": "Take Photo",
+      "capture": "Take photo",
+      "cancel": "Cancel"
+    },
+    "preview": {
+      "title": "Preview File",
+      "size": "Size"
+    },
+    "location": {
+      "getting": "📍 Getting location...",
+      "myLocation": "📍 My location",
+      "error": "❌ Cannot get location. Please allow location access."
+    },
+    "actions": {
+      "edit": "Edit",
+      "delete": "Delete",
+      "recall": "Recall",
+      "copy": "Copy",
+      "forward": "Forward",
+      "reply": "Reply",
+      "confirmDelete": "Are you sure you want to delete this message?",
+      "confirmRecall": "Recall this message for everyone?",
+      "recalled": "Message recalled",
+      "copied": "Copied to clipboard!",
+      "edited": "(edited)"
+    }
+  },
+  "channels": {
+    "title": "Channels",
+    "createChannel": "Create New Channel",
+    "searchPlaceholder": "Search channels...",
+    "all": "All",
+    "joined": "Joined",
+    "noChannels": "No channels found",
+    "general": "General Announcements",
+    "generalDesc": "Important announcements and news",
+    "development": "Product Development",
+    "developmentDesc": "Discuss new features",
+    "marketing": "Marketing",
+    "marketingDesc": "Marketing campaigns and content",
+    "design": "UI/UX Design",
+    "designDesc": "Share and feedback designs",
+    "random": "Random",
+    "randomDesc": "Casual conversations"
+  },
+  "contacts": {
+    "title": "Contacts",
+    "online": "Online",
+    "offline": "Offline",
+    "searchPlaceholder": "Search contacts...",
+    "viewProfile": "View Profile",
+    "sendMessage": "Send Message",
+    "videoCall": "Video Call"
+  },
+  "settings": {
+    "title": "Settings",
+    "profile": "Profile",
+    "editProfile": "Edit Profile",
+    "notifications": "Notifications",
+    "pushNotifications": "Push Notifications",
+    "emailNotifications": "Email Notifications",
+    "soundNotifications": "Sound Notifications",
+    "appearance": "Appearance",
+    "darkMode": "Dark Mode",
+    "language": "Language",
+    "privacy": "Privacy & Security",
+    "twoFactorAuth": "Two-Factor Authentication",
+    "blockList": "Block List",
+    "about": "About",
+    "version": "Version",
+    "termsOfService": "Terms of Service",
+    "privacyPolicy": "Privacy Policy",
+    "logout": "Logout"
+  },
+  "chatInfo": {
+    "about": "About",
+    "email": "Email",
+    "phone": "Phone",
+    "status": "Status",
+    "media": "Media",
+    "files": "Files",
+    "viewAll": "View All",
+    "actions": "Actions",
+    "mute": "Mute",
+    "search": "Search",
+    "report": "Report",
+    "block": "Block"
+  },
+  "home": {
+    "title": "Connect & Chat",
+    "subtitle": "Anywhere, Anytime",
+    "description": "Experience real-time messaging with a beautiful, fast, and secure interface. Connect with friends, family, and colleagues effortlessly.",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More",
+    "stats": {
+      "users": "Users",
+      "messages": "Messages/day",
+      "channels": "Channels"
+    },
+    "features": {
+      "title": "Key Features",
+      "subtitle": "Powerful features to make your chat experience better",
+      "realtime": {
+        "title": "Lightning Fast",
+        "description": "Messages sent and received instantly with modern WebSocket technology"
+      },
+      "channels": {
+        "title": "Group Chat",
+        "description": "Create group chats with friends, family or work teams"
+      },
+      "files": {
+        "title": "File Sharing",
+        "description": "Send photos, videos, and documents with unlimited size"
+      },
+      "video": {
+        "title": "Voice/Video Calls",
+        "description": "High-quality, stable phone and video calls"
+      },
+      "search": {
+        "title": "Multi-Platform",
+        "description": "Use on web, mobile, desktop - sync across all devices"
+      },
+      "security": {
+        "title": "End-to-End Security",
+        "description": "Messages encrypted end-to-end, only you and recipient can read"
+      }
+    },
+    "cta": {
+      "title": "Ready to get started?",
+      "description": "Join millions of users chatting on our platform",
+      "button": "Sign Up Free"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Login",
+      "subtitle": "Welcome back!",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "password": "Password",
+      "passwordPlaceholder": "••••••••",
+      "rememberMe": "Remember me",
+      "forgotPassword": "Forgot password?",
+      "loginButton": "Login",
+      "loggingIn": "Logging in...",
+      "or": "Or",
+      "loginWith": "Or login with",
+      "noAccount": "Don't have an account?",
+      "signUpNow": "Sign up now",
+      "termsAgreement": "By logging in, you agree to our",
+      "termsOfService": "Terms of Service",
+      "and": "and",
+      "privacyPolicy": "Privacy Policy",
+      "errors": {
+        "emailRequired": "Email is required",
+        "emailInvalid": "Invalid email",
+        "passwordRequired": "Password is required",
+        "passwordMinLength": "Password must be at least 6 characters",
+        "invalidCredentials": "Invalid email or password"
+      }
+    },
+    "register": {
+      "title": "Register",
+      "subtitle": "Create a new account to get started",
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "John Doe",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "password": "Password",
+      "passwordPlaceholder": "••••••••",
+      "confirmPassword": "Confirm Password",
+      "passwordStrength": "Password strength:",
+      "weak": "Weak",
+      "medium": "Medium",
+      "strong": "Strong",
+      "agreeToTerms": "I agree to the",
+      "termsOfService": "Terms of Service",
+      "and": "and",
+      "privacyPolicy": "Privacy Policy",
+      "registerButton": "Register",
+      "registering": "Registering...",
+      "or": "Or",
+      "registerWith": "Or register with",
+      "haveAccount": "Already have an account?",
+      "signIn": "Sign in",
+      "dataProtection": "Your information is protected and encrypted",
+      "errors": {
+        "fullNameRequired": "Full name is required",
+        "fullNameMinLength": "Full name must be at least 2 characters",
+        "emailRequired": "Email is required",
+        "emailInvalid": "Invalid email",
+        "passwordRequired": "Password is required",
+        "passwordMinLength": "Password must be at least 8 characters",
+        "passwordComplexity": "Password must contain uppercase, lowercase and numbers",
+        "confirmPasswordRequired": "Please confirm password",
+        "passwordMismatch": "Passwords do not match",
+        "emailTaken": "Email is already in use",
+        "agreeToTermsRequired": "You must agree to the terms of service"
+      }
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "subtitle": "Page Not Found",
+    "description": "The page you're looking for doesn't exist.",
+    "goHome": "Go Home"
+  }
+}
