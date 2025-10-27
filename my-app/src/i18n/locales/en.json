@@ -151,6 +151,44 @@
       "offline": "Offline",
       "away": "Away",
       "busy": "Busy"
+    },
+    "friendRequests": {
+      "title": "Friend Requests",
+      "pending": "request",
+      "pendingPlural": "requests",
+      "pendingText": "pending",
+      "noPendingRequests": "No pending requests",
+      "noPendingDesc": "When someone sends you a friend request, it will appear here",
+      "accept": "Accept",
+      "decline": "Decline",
+      "wantsToConnect": "Wants to connect with you",
+      "addNewFriend": "Add New Friend",
+      "close": "Close",
+      "justNow": "just now",
+      "hoursAgo": "{{count}}h ago",
+      "daysAgo": "{{count}}d ago"
+    },
+    "addFriend": {
+      "title": "Add a friend",
+      "description": "You can add friends by their email address or username.",
+      "emailOrUsername": "Email or Username",
+      "emailPlaceholder": "e.g. john@example.com or @johndoe",
+      "message": "Message (optional)",
+      "messagePlaceholder": "Say hi to your friend...",
+      "cancel": "Cancel",
+      "sendRequest": "Send Request",
+      "requestSent": "Friend request sent!"
+    },
+    "contextMenu": {
+      "sendMessage": "Send message",
+      "voiceCall": "Voice call",
+      "videoCall": "Video call",
+      "viewProfile": "View profile",
+      "removeFriend": "Remove friend",
+      "blockContact": "Block contact",
+      "confirmRemove": "Are you sure you want to remove this contact?",
+      "confirmBlock": "Are you sure you want to block this contact?",
+      "blockSuccess": "Contact blocked successfully!"
     }
   },
   "files": {

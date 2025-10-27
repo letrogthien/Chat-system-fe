@@ -151,6 +151,44 @@
       "offline": "Ngoại tuyến",
       "away": "Vắng mặt",
       "busy": "Bận"
+    },
+    "friendRequests": {
+      "title": "Lời mời kết bạn",
+      "pending": "lời mời",
+      "pendingPlural": "lời mời",
+      "pendingText": "đang chờ",
+      "noPendingRequests": "Không có lời mời nào",
+      "noPendingDesc": "Khi ai đó gửi lời mời kết bạn cho bạn, nó sẽ xuất hiện ở đây",
+      "accept": "Chấp nhận",
+      "decline": "Từ chối",
+      "wantsToConnect": "Muốn kết nối với bạn",
+      "addNewFriend": "Thêm bạn mới",
+      "close": "Đóng",
+      "justNow": "vừa xong",
+      "hoursAgo": "{{count}} giờ trước",
+      "daysAgo": "{{count}} ngày trước"
+    },
+    "addFriend": {
+      "title": "Thêm bạn bè",
+      "description": "Bạn có thể thêm bạn bằng địa chỉ email hoặc tên người dùng.",
+      "emailOrUsername": "Email hoặc Tên người dùng",
+      "emailPlaceholder": "vd: john@example.com hoặc @johndoe",
+      "message": "Tin nhắn (tùy chọn)",
+      "messagePlaceholder": "Gửi lời chào đến bạn bè...",
+      "cancel": "Hủy",
+      "sendRequest": "Gửi lời mời",
+      "requestSent": "Đã gửi lời mời kết bạn!"
+    },
+    "contextMenu": {
+      "sendMessage": "Gửi tin nhắn",
+      "voiceCall": "Gọi thoại",
+      "videoCall": "Gọi video",
+      "viewProfile": "Xem hồ sơ",
+      "removeFriend": "Xóa bạn bè",
+      "blockContact": "Chặn liên hệ",
+      "confirmRemove": "Bạn có chắc chắn muốn xóa liên hệ này?",
+      "confirmBlock": "Bạn có chắc chắn muốn chặn liên hệ này?",
+      "blockSuccess": "Đã chặn liên hệ thành công!"
     }
   },
   "files": {
