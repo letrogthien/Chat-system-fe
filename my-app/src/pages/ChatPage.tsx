@@ -5,6 +5,7 @@ import {
     ChatList,
     ChatSidebar,
     ContactsTab,
+    FilesTab,
     SettingsTab,
 } from '@/components/features/chat';
 import type { Tab } from '@/components/features/chat/ChatSidebar';
@@ -67,6 +68,8 @@ const ChatPage = () => {
         return <ChannelsTab />;
       case 'contacts':
         return <ContactsTab onSelectContact={handleSelectContact} />;
+      case 'files':
+        return <FilesTab />;
       case 'settings':
         return <SettingsTab />;
       default:

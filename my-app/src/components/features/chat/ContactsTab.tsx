@@ -81,12 +81,12 @@ const ContactsTab = ({ onSelectContact }: ContactsTabProps) => {
 
   const getStatusText = (status: Contact['status']) => {
     const statusMap: Record<Contact['status'], string> = {
-      'online': t('common.active'),
-      'away': t('common.away'),
-      'busy': 'Busy',
-      'offline': t('common.offline')
+      'online': t('contacts.status.online'),
+      'away': t('contacts.status.away'),
+      'busy': t('contacts.status.busy'),
+      'offline': t('contacts.status.offline')
     };
-    return statusMap[status] || t('common.offline');
+    return statusMap[status] || t('contacts.status.offline');
   };
 
   // Group contacts by status
@@ -141,7 +141,7 @@ const ContactsTab = ({ onSelectContact }: ContactsTabProps) => {
                 d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
               />
             </svg>
-            <p className="text-xs">Không tìm thấy liên hệ</p>
+            <p className="text-xs">{t('contacts.noContactsFound')}</p>
           </div>
         ) : (
           <>
@@ -150,7 +150,7 @@ const ContactsTab = ({ onSelectContact }: ContactsTabProps) => {
               <div>
                 <div className="px-3 py-1.5 bg-white border-b border-gray-300">
                   <h3 className="text-[11px] font-semibold text-gray-500 uppercase tracking-wider">
-                    Đang hoạt động — {onlineContacts.length}
+                    {t('contacts.activeNow')} — {onlineContacts.length}
                   </h3>
                 </div>
                 {onlineContacts.map((contact) => (
@@ -187,7 +187,7 @@ const ContactsTab = ({ onSelectContact }: ContactsTabProps) => {
                     <div className="flex items-center space-x-0.5">
                       <button
                         className="p-1.5 hover:bg-gray-200 rounded transition-colors"
-                        title="Gọi thoại"
+                        title={t('contacts.voiceCall')}
                         onClick={(e) => e.stopPropagation()}
                       >
                         <svg className="w-3.5 h-3.5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -196,7 +196,7 @@ const ContactsTab = ({ onSelectContact }: ContactsTabProps) => {
                       </button>
                       <button
                         className="p-1.5 hover:bg-gray-200 rounded transition-colors"
-                        title="Gọi video"
+                        title={t('contacts.videoCall')}
                         onClick={(e) => e.stopPropagation()}
                       >
                         <svg className="w-3.5 h-3.5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -214,7 +214,7 @@ const ContactsTab = ({ onSelectContact }: ContactsTabProps) => {
               <div>
                 <div className="px-3 py-1.5 bg-white border-b border-gray-300">
                   <h3 className="text-[11px] font-semibold text-gray-500 uppercase tracking-wider">
-                    Ngoại tuyến — {offlineContacts.length}
+                    {t('contacts.offlineContacts')} — {offlineContacts.length}
                   </h3>
                 </div>
                 {offlineContacts.map((contact) => (
@@ -260,7 +260,7 @@ const ContactsTab = ({ onSelectContact }: ContactsTabProps) => {
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
           </svg>
-          <span>Thêm liên hệ</span>
+          <span>{t('contacts.addContact')}</span>
         </button>
       </div>
     </div>

@@ -28,6 +28,11 @@ const mockMessages: Message[] = [
     timestamp: '10:32',
     status: 'read',
     type: 'text',
+    replyTo: {
+      id: '1',
+      senderName: 'Nguyễn Văn A',
+      content: 'Hey! How are you doing?',
+    },
   },
   {
     id: '3',
@@ -48,6 +53,11 @@ const mockMessages: Message[] = [
     timestamp: '10:35',
     status: 'sent',
     type: 'text',
+    replyTo: {
+      id: '3',
+      senderName: 'Nguyễn Văn A',
+      content: 'Do you want to grab coffee later?',
+    },
   },
 ];
 
@@ -75,6 +85,11 @@ const ChatArea = ({ contact, onToggleInfo }: ChatAreaProps) => {
     senderName: string;
     content: string;
   } | null>(null);
+  const [showDeleteConfirm, setShowDeleteConfirm] = useState<{
+    show: boolean;
+    messageId: string | null;
+    type: 'delete' | 'recall' | null;
+  }>({ show: false, messageId: null, type: null });
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -82,6 +97,8 @@ const ChatArea = ({ contact, onToggleInfo }: ChatAreaProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const emojiPickerRef = useRef<HTMLDivElement>(null);
   const attachmentMenuRef = useRef<HTMLDivElement>(null);
+  const messageRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
+  const [highlightedMessageId, setHighlightedMessageId] = useState<string | null>(null);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -125,13 +142,14 @@ const ChatArea = ({ contact, onToggleInfo }: ChatAreaProps) => {
     if (!contact) return;
 
     // Send text message if there's text
-    if (inputValue.trim()) {
+    const trimmedContent = inputValue.trim();
+    if (trimmedContent) {
       const newMessage: Message = {
         id: Date.now().toString(),
         senderId: 'me',
         senderName: 'Me',
         senderAvatar: 'https://ui-avatars.com/api/?name=Me&background=2563eb&color=fff',
-        content: inputValue,
+        content: trimmedContent,
         timestamp: new Date().toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' }),
         status: 'sending',
         type: 'text',
@@ -378,21 +396,33 @@ const ChatArea = ({ contact, onToggleInfo }: ChatAreaProps) => {
 
   // Message actions
   const handleDeleteMessage = (messageId: string) => {
-    if (confirm(t('chat.actions.confirmDelete') || 'Are you sure you want to delete this message?')) {
-      setMessages(prev => prev.filter(msg => msg.id !== messageId));
-      setMessageMenuId(null);
-    }
+    setShowDeleteConfirm({ show: true, messageId, type: 'delete' });
+    setMessageMenuId(null);
   };
 
   const handleRecallMessage = (messageId: string) => {
-    if (confirm(t('chat.actions.confirmRecall') || 'Recall this message for everyone?')) {
+    setShowDeleteConfirm({ show: true, messageId, type: 'recall' });
+    setMessageMenuId(null);
+  };
+
+  const confirmAction = () => {
+    if (!showDeleteConfirm.messageId) return;
+
+    if (showDeleteConfirm.type === 'delete') {
+      setMessages(prev => prev.filter(msg => msg.id !== showDeleteConfirm.messageId));
+    } else if (showDeleteConfirm.type === 'recall') {
       setMessages(prev => prev.map(msg => 
-        msg.id === messageId 
+        msg.id === showDeleteConfirm.messageId
           ? { ...msg, content: t('chat.actions.recalled') || 'Message recalled', type: 'text' as const, recalled: true }
           : msg
       ));
-      setMessageMenuId(null);
     }
+
+    setShowDeleteConfirm({ show: false, messageId: null, type: null });
+  };
+
+  const cancelAction = () => {
+    setShowDeleteConfirm({ show: false, messageId: null, type: null });
   };
 
   const handleEditMessage = (messageId: string, currentContent: string) => {
@@ -446,6 +476,19 @@ const ChatArea = ({ contact, onToggleInfo }: ChatAreaProps) => {
 
   const handleCancelReply = () => {
     setReplyingTo(null);
+  };
+
+  const scrollToMessage = (messageId: string) => {
+    const messageElement = messageRefs.current[messageId];
+    if (messageElement) {
+      messageElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setHighlightedMessageId(messageId);
+      
+      // Remove highlight after 2 seconds
+      setTimeout(() => {
+        setHighlightedMessageId(null);
+      }, 2000);
+    }
   };
 
   const handleAttachmentClick = (type: string) => {
@@ -557,7 +600,12 @@ const ChatArea = ({ contact, onToggleInfo }: ChatAreaProps) => {
           return (
             <div
               key={message.id}
-              className={`flex ${isMe ? 'justify-end' : 'justify-start'} group relative`}
+              ref={(el) => {
+                messageRefs.current[message.id] = el;
+              }}
+              className={`flex ${isMe ? 'justify-end' : 'justify-start'} group relative transition-all duration-300 ${
+                highlightedMessageId === message.id ? 'bg-yellow-100 -mx-4 px-4 rounded-lg' : ''
+              }`}
             >
               <div className={`flex space-x-2 max-w-[65%] ${isMe ? 'flex-row-reverse space-x-reverse' : ''}`}>
                 {/* Avatar */}
@@ -615,7 +663,18 @@ const ChatArea = ({ contact, onToggleInfo }: ChatAreaProps) => {
                       >
                         {/* Replied Message Quote */}
                         {(message as any).replyTo && (
-                          <div className={`mb-2 pb-2 border-l-2 pl-2 ${isMe ? 'border-white/30' : 'border-gray-400'}`}>
+                          <div 
+                            className={`mb-2 pb-2 border-l-2 pl-2 cursor-pointer hover:bg-black/5 rounded transition-colors ${isMe ? 'border-white/30' : 'border-gray-400'}`}
+                            onClick={() => scrollToMessage((message as any).replyTo.id)}
+                            onKeyDown={(e) => {
+                              if (e.key === 'Enter' || e.key === ' ') {
+                                e.preventDefault();
+                                scrollToMessage((message as any).replyTo.id);
+                              }
+                            }}
+                            role="button"
+                            tabIndex={0}
+                          >
                             <div className={`text-xs font-semibold ${isMe ? 'text-white/90' : 'text-gray-600'}`}>
                               {(message as any).replyTo.senderName}
                             </div>
@@ -1079,6 +1138,53 @@ const ChatArea = ({ contact, onToggleInfo }: ChatAreaProps) => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                 </svg>
                 <span>{t('common.send')}</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Delete/Recall Confirmation Modal */}
+      {showDeleteConfirm.show && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg shadow-xl w-full max-w-md mx-4">
+            {/* Modal Header */}
+            <div className="p-6 border-b border-gray-200">
+              <h3 className="text-lg font-bold text-gray-900">
+                {showDeleteConfirm.type === 'delete' 
+                  ? (t('chat.actions.confirmDeleteTitle') || 'Delete Message')
+                  : (t('chat.actions.confirmRecallTitle') || 'Recall Message')}
+              </h3>
+            </div>
+
+            {/* Modal Body */}
+            <div className="p-6">
+              <p className="text-gray-700">
+                {showDeleteConfirm.type === 'delete'
+                  ? (t('chat.actions.confirmDelete') || 'Are you sure you want to delete this message? This action cannot be undone.')
+                  : (t('chat.actions.confirmRecall') || 'Recall this message for everyone? This action cannot be undone.')}
+              </p>
+            </div>
+
+            {/* Modal Footer */}
+            <div className="flex items-center justify-end space-x-3 p-6 border-t border-gray-200 bg-gray-50">
+              <button
+                onClick={cancelAction}
+                className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 hover:bg-gray-50 rounded transition-colors"
+              >
+                {t('common.cancel') || 'Cancel'}
+              </button>
+              <button
+                onClick={confirmAction}
+                className={`px-4 py-2 text-sm font-medium text-white rounded transition-colors ${
+                  showDeleteConfirm.type === 'delete'
+                    ? 'bg-red-600 hover:bg-red-700'
+                    : 'bg-[#007a5a] hover:bg-[#006644]'
+                }`}
+              >
+                {showDeleteConfirm.type === 'delete'
+                  ? (t('chat.actions.delete') || 'Delete')
+                  : (t('chat.actions.recall') || 'Recall')}
               </button>
             </div>
           </div>

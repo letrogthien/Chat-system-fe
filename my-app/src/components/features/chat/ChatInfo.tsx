@@ -23,40 +23,38 @@ const ChatInfo = ({ contact, onClose }: ChatInfoProps) => {
   ];
 
   const sharedFiles = [
-    { id: 1, name: 'document.pdf', size: '2.4 MB', date: '2 ngày trước' },
-    { id: 2, name: 'presentation.pptx', size: '5.1 MB', date: '1 tuần trước' },
-    { id: 3, name: 'report.docx', size: '890 KB', date: '2 tuần trước' },
+    { id: 1, name: 'document.pdf', size: '2.4 MB', date: t('chatInfo.daysAgo', { count: 2 }) },
+    { id: 2, name: 'presentation.pptx', size: '5.1 MB', date: t('chatInfo.weeksAgo', { count: 1 }) },
+    { id: 3, name: 'report.docx', size: '890 KB', date: t('chatInfo.weeksAgo', { count: 2 }) },
   ];
 
   const handleVoiceCall = () => {
-    alert(`Đang gọi tới ${contact.name}...`);
+    alert(t('chatInfo.callingVoice', { name: contact.name }));
     // TODO: Implement actual voice call functionality
   };
 
   const handleVideoCall = () => {
-    alert(`Đang gọi video tới ${contact.name}...`);
+    alert(t('chatInfo.callingVideo', { name: contact.name }));
     // TODO: Implement actual video call functionality
   };
 
   const handleSearch = () => {
-    alert('Tìm kiếm trong cuộc trò chuyện');
+    alert(t('chatInfo.searchInConversation'));
     // TODO: Implement search in conversation
   };
 
   const handleToggleMute = () => {
     setIsMuted(!isMuted);
-    const status = !isMuted ? 'đã tắt' : 'đã bật';
-    alert(`Thông báo ${status} cho ${contact.name}`);
+    alert(!isMuted ? t('chatInfo.notificationMuted', { name: contact.name }) : t('chatInfo.notificationUnmuted', { name: contact.name }));
   };
 
   const handleToggleStar = () => {
     setIsStarred(!isStarred);
-    const status = !isStarred ? 'đã đánh dấu quan trọng' : 'đã bỏ đánh dấu';
-    alert(`${contact.name} ${status}`);
+    alert(!isStarred ? t('chatInfo.conversationStarred', { name: contact.name }) : t('chatInfo.conversationUnstarred', { name: contact.name }));
   };
 
   const handleViewAllMedia = () => {
-    alert('Xem tất cả ảnh & video');
+    alert(t('chatInfo.viewAllMedia'));
     // TODO: Open media gallery modal
   };
 
@@ -66,25 +64,25 @@ const ChatInfo = ({ contact, onClose }: ChatInfoProps) => {
   };
 
   const handleViewAllFiles = () => {
-    alert('Xem tất cả file đã chia sẻ');
+    alert(t('chatInfo.viewAllFiles'));
     // TODO: Open files list modal
   };
 
   const handleFileClick = (file: { name: string; size: string }) => {
-    alert(`Đang tải xuống ${file.name} (${file.size})`);
+    alert(t('chatInfo.downloading', { name: file.name, size: file.size }));
     // TODO: Implement file download
   };
 
   const handleBlockUser = () => {
-    if (confirm(`Bạn có chắc chắn muốn chặn ${contact.name}?`)) {
-      alert(`Đã chặn ${contact.name}`);
+    if (confirm(t('chatInfo.confirmBlock', { name: contact.name }))) {
+      alert(t('chatInfo.blockedUser', { name: contact.name }));
       // TODO: Implement block user functionality
     }
   };
 
   const handleDeleteChat = () => {
-    if (confirm(`Bạn có chắc chắn muốn xóa cuộc trò chuyện với ${contact.name}?`)) {
-      alert(`Đã xóa cuộc trò chuyện với ${contact.name}`);
+    if (confirm(t('chatInfo.confirmDelete', { name: contact.name }))) {
+      alert(t('chatInfo.deletedChat', { name: contact.name }));
       onClose();
       // TODO: Implement delete chat functionality
     }
@@ -118,7 +116,7 @@ const ChatInfo = ({ contact, onClose }: ChatInfoProps) => {
             {contact.name}
           </h4>
           <p className="text-xs text-gray-500 mb-3">
-            {contact.status === 'online' ? 'Đang hoạt động' : 'Không hoạt động'}
+            {contact.status === 'online' ? t('chatInfo.activeNow') : t('chatInfo.inactive')}
           </p>
           
           {/* Action Buttons */}
@@ -132,7 +130,7 @@ const ChatInfo = ({ contact, onClose }: ChatInfoProps) => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
               </div>
-              <span className="text-[10px] text-gray-600">Gọi</span>
+              <span className="text-[10px] text-gray-600">{t('chatInfo.voiceCall')}</span>
             </button>
             
             <button 
@@ -144,7 +142,7 @@ const ChatInfo = ({ contact, onClose }: ChatInfoProps) => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                 </svg>
               </div>
-              <span className="text-[10px] text-gray-600">Video</span>
+              <span className="text-[10px] text-gray-600">{t('chatInfo.videoCall')}</span>
             </button>
             
             <button 
@@ -156,7 +154,7 @@ const ChatInfo = ({ contact, onClose }: ChatInfoProps) => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
               </div>
-              <span className="text-[10px] text-gray-600">Tìm</span>
+              <span className="text-[10px] text-gray-600">{t('chatInfo.searchInChat')}</span>
             </button>
           </div>
         </div>
@@ -179,7 +177,7 @@ const ChatInfo = ({ contact, onClose }: ChatInfoProps) => {
                 </svg>
               )}
               <span className="text-xs text-gray-700">
-                {isMuted ? 'Bật thông báo' : 'Tắt thông báo'}
+                {isMuted ? t('chatInfo.unmuteNotifications') : t('chatInfo.muteNotifications')}
               </span>
             </div>
             <svg className="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -201,7 +199,7 @@ const ChatInfo = ({ contact, onClose }: ChatInfoProps) => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
               </svg>
               <span className="text-xs text-gray-700">
-                {isStarred ? 'Bỏ đánh dấu' : 'Đánh dấu'}
+                {isStarred ? t('chatInfo.unstarConversation') : t('chatInfo.starConversation')}
               </span>
             </div>
             <svg className="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -213,12 +211,12 @@ const ChatInfo = ({ contact, onClose }: ChatInfoProps) => {
         {/* Media Section */}
         <div className="py-3 border-b border-gray-300">
           <div className="px-3 mb-2 flex items-center justify-between">
-            <h4 className="text-xs font-bold text-gray-900">Ảnh & Video</h4>
+            <h4 className="text-xs font-bold text-gray-900">{t('chatInfo.photosVideos')}</h4>
             <button 
               onClick={handleViewAllMedia}
               className="text-[10px] text-[#1164a3] hover:underline font-semibold"
             >
-              Xem tất cả
+              {t('chatInfo.viewAll')}
             </button>
           </div>
           <div className="px-3 grid grid-cols-3 gap-1.5">
@@ -241,12 +239,12 @@ const ChatInfo = ({ contact, onClose }: ChatInfoProps) => {
         {/* Files Section */}
         <div className="py-3 border-b border-gray-300">
           <div className="px-3 mb-2 flex items-center justify-between">
-            <h4 className="text-xs font-bold text-gray-900">File đã chia sẻ</h4>
+            <h4 className="text-xs font-bold text-gray-900">{t('chatInfo.sharedFiles')}</h4>
             <button 
               onClick={handleViewAllFiles}
               className="text-[10px] text-[#1164a3] hover:underline font-semibold"
             >
-              Xem tất cả
+              {t('chatInfo.viewAll')}
             </button>
           </div>
           <div className="space-y-0.5">
@@ -286,7 +284,7 @@ const ChatInfo = ({ contact, onClose }: ChatInfoProps) => {
             <svg className="w-4 h-4 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
             </svg>
-            <span className="text-xs font-semibold">Chặn người dùng</span>
+            <span className="text-xs font-semibold">{t('chatInfo.blockUser')}</span>
           </button>
           
           <button 
@@ -296,7 +294,7 @@ const ChatInfo = ({ contact, onClose }: ChatInfoProps) => {
             <svg className="w-4 h-4 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
             </svg>
-            <span className="text-xs font-semibold">Xóa cuộc trò chuyện</span>
+            <span className="text-xs font-semibold">{t('chatInfo.deleteConversation')}</span>
           </button>
         </div>
       </div>
@@ -326,10 +324,10 @@ const ChatInfo = ({ contact, onClose }: ChatInfoProps) => {
               <button
                 onClick={(e) => {
                   e.stopPropagation();
-                  alert('Tải xuống ảnh');
+                  alert(t('chatInfo.downloadImage'));
                 }}
                 className="p-2 hover:bg-white hover:bg-opacity-20 rounded-full transition-colors"
-                title="Tải xuống"
+                title={t('chatInfo.download')}
               >
                 <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -338,10 +336,10 @@ const ChatInfo = ({ contact, onClose }: ChatInfoProps) => {
               <button
                 onClick={(e) => {
                   e.stopPropagation();
-                  alert('Chia sẻ ảnh');
+                  alert(t('chatInfo.shareImage'));
                 }}
                 className="p-2 hover:bg-white hover:bg-opacity-20 rounded-full transition-colors"
-                title="Chia sẻ"
+                title={t('chatInfo.share')}
               >
                 <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
